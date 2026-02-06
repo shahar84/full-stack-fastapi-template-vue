@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import { useQuery } from "@tanstack/vue-query"
 import { computed } from "vue"
-import { Search } from "lucide-vue-next"
 import { ItemsService } from "@/client"
-import DataTable from "@/components/Common/DataTable.vue"
-import AddItem from "@/components/Items/AddItem.vue"
 import { columns } from "@/components/Items/columns"
-import PendingItems from "@/components/Pending/PendingItems.vue"
 
 const { data: items, isLoading } = useQuery({
   queryKey: ["items"],

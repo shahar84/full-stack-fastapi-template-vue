@@ -1,13 +1,6 @@
 <script setup lang="ts">
-import { useTheme, type Theme } from "@/composables/useTheme"
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Sun, Moon, Monitor } from "lucide-vue-next"
+import { Monitor, Moon, Sun } from "lucide-vue-next"
+import { type Theme, useTheme } from "@/composables/useTheme"
 
 const { setTheme } = useTheme()
 

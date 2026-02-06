@@ -1,16 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { MoreHorizontal, Pencil, Trash } from "lucide-vue-next"
 import type { UserPublic } from "@/client"
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import EditUser from "./EditUser.vue"
-import DeleteUser from "./DeleteUser.vue"
+import type DeleteUser from "./DeleteUser.vue"
+import type EditUser from "./EditUser.vue"
 
 defineProps<{ user: UserPublic; isCurrentUser: boolean }>()
 

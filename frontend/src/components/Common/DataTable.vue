@@ -1,34 +1,11 @@
 <script setup lang="ts" generic="TData, TValue">
 import {
-  useVueTable,
+  type ColumnDef,
   getCoreRowModel,
   getPaginationRowModel,
-  FlexRender,
-  type ColumnDef,
+  useVueTable,
 } from "@tanstack/vue-table"
 import { computed } from "vue"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-import { Button } from "@/components/ui/button"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronsLeft,
-  ChevronsRight,
-} from "lucide-vue-next"
 
 const props = defineProps<{
   columns: ColumnDef<TData, TValue>[]
@@ -36,8 +13,12 @@ const props = defineProps<{
 }>()
 
 const table = useVueTable({
-  get data() { return props.data },
-  get columns() { return props.columns },
+  get data() {
+    return props.data
+  },
+  get columns() {
+    return props.columns
+  },
   getCoreRowModel: getCoreRowModel(),
   getPaginationRowModel: getPaginationRowModel(),
 })

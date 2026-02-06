@@ -1,5 +1,5 @@
-import { h } from "vue"
 import type { ColumnDef } from "@tanstack/vue-table"
+import { h } from "vue"
 import type { UserPublic } from "@/client"
 import { Badge } from "@/components/ui/badge"
 import UserActionsMenu from "./UserActionsMenu.vue"
@@ -17,7 +17,9 @@ export const columns: ColumnDef<UserTableData>[] = [
       const isCurrentUser = row.original.isCurrentUser
       return h("div", { class: "flex items-center gap-2" }, [
         h("span", name || "N/A"),
-        isCurrentUser ? h(Badge, { variant: "outline", class: "text-xs" }, () => "You") : null,
+        isCurrentUser
+          ? h(Badge, { variant: "outline", class: "text-xs" }, () => "You")
+          : null,
       ])
     },
   },
@@ -30,10 +32,8 @@ export const columns: ColumnDef<UserTableData>[] = [
     header: "Role",
     cell: ({ row }) => {
       const isSuperuser = row.getValue("is_superuser") as boolean
-      return h(
-        Badge,
-        { variant: isSuperuser ? "default" : "secondary" },
-        () => (isSuperuser ? "Superuser" : "User"),
+      return h(Badge, { variant: isSuperuser ? "default" : "secondary" }, () =>
+        isSuperuser ? "Superuser" : "User",
       )
     },
   },

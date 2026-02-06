@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue"
-import { useForm } from "vee-validate"
-import { toTypedSchema } from "@vee-validate/zod"
-import { z } from "zod"
 import { useMutation, useQueryClient } from "@tanstack/vue-query"
+import { toTypedSchema } from "@vee-validate/zod"
+import { useForm } from "vee-validate"
+import { ref } from "vue"
+import { z } from "zod"
 import { type UserPublic, UsersService } from "@/client"
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogClose } from "@/components/ui/dialog"
-import { DialogHeader, DialogFooter } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
 import useCustomToast from "@/composables/useCustomToast"
 import { handleError } from "@/lib/utils"
 
@@ -71,7 +67,9 @@ const onSubmit = handleSubmit((values) => {
   mutation.mutate(data)
 })
 
-const open = () => { isOpen.value = true }
+const open = () => {
+  isOpen.value = true
+}
 defineExpose({ open })
 </script>
 

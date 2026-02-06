@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { useForm } from "vee-validate"
-import { toTypedSchema } from "@vee-validate/zod"
-import { z } from "zod"
 import { useMutation } from "@tanstack/vue-query"
+import { toTypedSchema } from "@vee-validate/zod"
+import { useForm } from "vee-validate"
 import { useRoute, useRouter } from "vue-router"
+import { z } from "zod"
 import { LoginService } from "@/client"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 import useCustomToast from "@/composables/useCustomToast"
 import { handleError } from "@/lib/utils"
 
@@ -32,7 +30,8 @@ const { handleSubmit, defineField, errors } = useForm({
 })
 
 const [newPassword, newPasswordAttrs] = defineField("new_password")
-const [confirmPassword, confirmPasswordAttrs] = defineField("confirm_password")
+const [confirmPassword, confirmPasswordAttrs] =
+  defineField("confirm_password")
 
 const mutation = useMutation({
   mutationFn: (data: { new_password: string }) =>

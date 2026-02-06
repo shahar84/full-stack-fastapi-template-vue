@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import Logo from "@/components/Common/Logo.vue"
-import Appearance from "@/components/Common/Appearance.vue"
-import Footer from "@/components/Common/Footer.vue"
+
 </script>
 
 <template>

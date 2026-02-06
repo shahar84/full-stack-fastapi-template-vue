@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import AppSidebar from "@/components/Sidebar/AppSidebar.vue"
-import Footer from "@/components/Common/Footer.vue"
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
+
 </script>
 
 <template>

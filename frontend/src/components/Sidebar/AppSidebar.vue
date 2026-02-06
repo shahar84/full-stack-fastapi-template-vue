@@ -1,16 +1,6 @@
 <script setup lang="ts">
+import { Briefcase, Home, Users } from "lucide-vue-next"
 import { computed } from "vue"
-import { Home, Briefcase, Users } from "lucide-vue-next"
-import Logo from "@/components/Common/Logo.vue"
-import Appearance from "@/components/Common/Appearance.vue"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-} from "@/components/ui/sidebar"
-import SidebarMain from "./SidebarMain.vue"
-import SidebarUser from "./SidebarUser.vue"
 import useAuth from "@/composables/useAuth"
 
 const { user: currentUser } = useAuth()

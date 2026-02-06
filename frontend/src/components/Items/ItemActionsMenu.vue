@@ -1,16 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { MoreHorizontal, Pencil, Trash } from "lucide-vue-next"
 import type { ItemPublic } from "@/client"
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import EditItem from "./EditItem.vue"
-import DeleteItem from "./DeleteItem.vue"
+import type DeleteItem from "./DeleteItem.vue"
+import type EditItem from "./EditItem.vue"
 
 defineProps<{ item: ItemPublic }>()
 

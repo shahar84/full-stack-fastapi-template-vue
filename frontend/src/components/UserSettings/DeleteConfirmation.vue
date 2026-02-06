@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue"
 import { useMutation } from "@tanstack/vue-query"
+import { ref } from "vue"
 import { UsersService } from "@/client"
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogClose } from "@/components/ui/dialog"
-import { DialogHeader, DialogFooter } from "@/components/ui/dialog"
 import useAuth from "@/composables/useAuth"
 import useCustomToast from "@/composables/useCustomToast"
 import { handleError } from "@/lib/utils"

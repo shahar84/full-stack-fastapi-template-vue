@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { useForm } from "vee-validate"
-import { toTypedSchema } from "@vee-validate/zod"
-import { z } from "zod"
 import { useMutation } from "@tanstack/vue-query"
+import { toTypedSchema } from "@vee-validate/zod"
+import { useForm } from "vee-validate"
+import { z } from "zod"
 import { UsersService } from "@/client"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import useCustomToast from "@/composables/useCustomToast"
 import { handleError } from "@/lib/utils"
 
@@ -15,7 +12,9 @@ const { showSuccessToast, showErrorToast } = useCustomToast()
 const formSchema = toTypedSchema(
   z
     .object({
-      current_password: z.string().min(8, "Password must be at least 8 characters"),
+      current_password: z
+        .string()
+        .min(8, "Password must be at least 8 characters"),
       new_password: z.string().min(8, "Password must be at least 8 characters"),
       confirm_password: z.string(),
     })
@@ -34,9 +33,11 @@ const { handleSubmit, defineField, errors, resetForm } = useForm({
   },
 })
 
-const [currentPassword, currentPasswordAttrs] = defineField("current_password")
+const [currentPassword, currentPasswordAttrs] =
+  defineField("current_password")
 const [newPassword, newPasswordAttrs] = defineField("new_password")
-const [confirmPassword, confirmPasswordAttrs] = defineField("confirm_password")
+const [confirmPassword, confirmPasswordAttrs] =
+  defineField("confirm_password")
 
 const mutation = useMutation({
   mutationFn: (data: { current_password: string; new_password: string }) =>

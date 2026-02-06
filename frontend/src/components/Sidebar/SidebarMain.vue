@@ -1,13 +1,6 @@
 <script setup lang="ts">
+import { type Component, inject, type Ref } from "vue"
 import { useRoute } from "vue-router"
-import { inject, type Component, type Ref } from "vue"
-import {
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
 
 export interface NavItem {
   icon: Component

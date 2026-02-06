@@ -1,20 +1,5 @@
 <script setup lang="ts">
 import { inject, type Ref } from "vue"
-import { ChevronsUpDown, LogOut, Settings } from "lucide-vue-next"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
 import useAuth from "@/composables/useAuth"
 import { getInitials } from "@/lib/utils"
 

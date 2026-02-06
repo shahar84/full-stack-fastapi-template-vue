@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue"
 import { useMutation, useQueryClient } from "@tanstack/vue-query"
+import { ref } from "vue"
 import { type ItemPublic, ItemsService } from "@/client"
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogClose } from "@/components/ui/dialog"
-import { DialogHeader, DialogFooter } from "@/components/ui/dialog"
 import useCustomToast from "@/composables/useCustomToast"
 import { handleError } from "@/lib/utils"
 
@@ -26,7 +23,9 @@ const mutation = useMutation({
   },
 })
 
-const open = () => { isOpen.value = true }
+const open = () => {
+  isOpen.value = true
+}
 defineExpose({ open })
 </script>
 

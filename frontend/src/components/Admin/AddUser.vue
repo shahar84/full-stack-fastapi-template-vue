@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue"
-import { useForm } from "vee-validate"
-import { toTypedSchema } from "@vee-validate/zod"
-import { z } from "zod"
 import { useMutation, useQueryClient } from "@tanstack/vue-query"
-import { Plus } from "lucide-vue-next"
+import { toTypedSchema } from "@vee-validate/zod"
+import { useForm } from "vee-validate"
+import { ref } from "vue"
+import { z } from "zod"
 import { type UserCreate, UsersService } from "@/client"
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog"
-import { DialogHeader, DialogFooter } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
 import useCustomToast from "@/composables/useCustomToast"
 import { handleError } from "@/lib/utils"
 
@@ -48,7 +43,8 @@ const { handleSubmit, defineField, errors, resetForm } = useForm({
 const [email, emailAttrs] = defineField("email")
 const [fullName, fullNameAttrs] = defineField("full_name")
 const [password, passwordAttrs] = defineField("password")
-const [confirmPassword, confirmPasswordAttrs] = defineField("confirm_password")
+const [confirmPassword, confirmPasswordAttrs] =
+  defineField("confirm_password")
 const [isSuperuser] = defineField("is_superuser")
 const [isActive] = defineField("is_active")
 

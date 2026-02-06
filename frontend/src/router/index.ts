@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
-import { isLoggedIn } from "@/composables/useAuth"
 import { UsersService } from "@/client"
+import { isLoggedIn } from "@/composables/useAuth"
 
 const router = createRouter({
   history: createWebHistory(),

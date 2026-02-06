@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { useForm } from "vee-validate"
 import { toTypedSchema } from "@vee-validate/zod"
+import { useForm } from "vee-validate"
 import { z } from "zod"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 import useAuth from "@/composables/useAuth"
 
 const { signUpMutation } = useAuth()
@@ -35,7 +33,8 @@ const { handleSubmit, defineField, errors } = useForm({
 const [email, emailAttrs] = defineField("email")
 const [fullName, fullNameAttrs] = defineField("full_name")
 const [password, passwordAttrs] = defineField("password")
-const [confirmPassword, confirmPasswordAttrs] = defineField("confirm_password")
+const [confirmPassword, confirmPasswordAttrs] =
+  defineField("confirm_password")
 
 const onSubmit = handleSubmit((values) => {
   if (signUpMutation.isPending.value) return

@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import UserInformation from "@/components/UserSettings/UserInformation.vue"
-import ChangePassword from "@/components/UserSettings/ChangePassword.vue"
-import DeleteAccount from "@/components/UserSettings/DeleteAccount.vue"
-import useAuth from "@/composables/useAuth"
 import { computed } from "vue"
+import useAuth from "@/composables/useAuth"
 
 const { user: currentUser } = useAuth()
 

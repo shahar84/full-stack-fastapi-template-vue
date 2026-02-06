@@ -1,8 +1,13 @@
+import {
+  MutationCache,
+  QueryCache,
+  QueryClient,
+  VueQueryPlugin,
+} from "@tanstack/vue-query"
 import { createApp } from "vue"
-import { VueQueryPlugin, QueryClient, MutationCache, QueryCache } from "@tanstack/vue-query"
 import App from "./App.vue"
-import router from "./router"
 import { ApiError, OpenAPI } from "./client"
+import router from "./router"
 import "./index.css"
 
 OpenAPI.BASE = import.meta.env.VITE_API_URL

@@ -14,12 +14,17 @@ export function getInitials(name: string): string {
     .slice(0, 2)
 }
 
-export function handleError(this: { showErrorToast: (msg: string) => void }, error: unknown) {
+export function handleError(
+  this: { showErrorToast: (msg: string) => void },
+  error: unknown,
+) {
   const showErrorToast = this?.showErrorToast
   if (!showErrorToast) return
 
   if (error instanceof Error && "body" in error) {
-    const apiError = error as { body?: { detail?: string | Array<{ msg: string }> } }
+    const apiError = error as {
+      body?: { detail?: string | Array<{ msg: string }> }
+    }
     const detail = apiError.body?.detail
     if (typeof detail === "string") {
       showErrorToast(detail)

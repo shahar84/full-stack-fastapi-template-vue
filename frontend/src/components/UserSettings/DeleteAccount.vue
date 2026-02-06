@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import DeleteConfirmation from "./DeleteConfirmation.vue"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+
 </script>
 
 <template>

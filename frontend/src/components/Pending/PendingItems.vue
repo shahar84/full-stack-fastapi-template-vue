@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Skeleton } from "@/components/ui/skeleton"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+
 </script>
 
 <template>

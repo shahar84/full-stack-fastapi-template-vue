@@ -1,4 +1,13 @@
-import { inject, onMounted, onUnmounted, provide, ref, watch, type InjectionKey, type Ref } from "vue"
+import {
+  type InjectionKey,
+  inject,
+  onMounted,
+  onUnmounted,
+  provide,
+  type Ref,
+  ref,
+  watch,
+} from "vue"
 
 export type Theme = "dark" | "light" | "system"
 
@@ -10,12 +19,19 @@ interface ThemeContext {
 
 export const ThemeKey: InjectionKey<ThemeContext> = Symbol("theme")
 
-export function provideTheme(defaultTheme: Theme = "system", storageKey = "vite-ui-theme") {
-  const theme = ref<Theme>((localStorage.getItem(storageKey) as Theme) || defaultTheme)
+export function provideTheme(
+  defaultTheme: Theme = "system",
+  storageKey = "vite-ui-theme",
+) {
+  const theme = ref<Theme>(
+    (localStorage.getItem(storageKey) as Theme) || defaultTheme,
+  )
 
   const getResolvedTheme = (t: Theme): "dark" | "light" => {
     if (t === "system") {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
     }
     return t
   }
@@ -26,7 +42,10 @@ export function provideTheme(defaultTheme: Theme = "system", storageKey = "vite-
     const root = window.document.documentElement
     root.classList.remove("light", "dark")
     if (newTheme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light"
       root.classList.add(systemTheme)
     } else {
       root.classList.add(newTheme)
@@ -59,7 +78,9 @@ export function provideTheme(defaultTheme: Theme = "system", storageKey = "vite-
 
   onUnmounted(() => {
     if (mediaHandler) {
-      window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", mediaHandler)
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", mediaHandler)
     }
   })
 

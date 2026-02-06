@@ -1,5 +1,5 @@
-import { h } from "vue"
 import type { ColumnDef } from "@tanstack/vue-table"
+import { h } from "vue"
 import type { ItemPublic } from "@/client"
 import ItemActionsMenu from "./ItemActionsMenu.vue"
 
@@ -9,7 +9,7 @@ export const columns: ColumnDef<ItemPublic>[] = [
     header: "ID",
     cell: ({ row }) => {
       const id = row.getValue("id") as string
-      return h("span", { class: "font-mono text-xs" }, id.slice(0, 8) + "...")
+      return h("span", { class: "font-mono text-xs" }, `${id.slice(0, 8)}...`)
     },
   },
   {

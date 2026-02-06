@@ -2,10 +2,8 @@
 import { useQuery } from "@tanstack/vue-query"
 import { computed } from "vue"
 import { type UserPublic, UsersService } from "@/client"
-import AddUser from "@/components/Admin/AddUser.vue"
-import { columns, type UserTableData } from "@/components/Admin/columns"
-import DataTable from "@/components/Common/DataTable.vue"
-import PendingUsers from "@/components/Pending/PendingUsers.vue"
+import { columns } from "@/components/Admin/columns"
+import type { UserTableData } from "@/components/Admin/columns"
 import useAuth from "@/composables/useAuth"
 
 const { user: currentUser } = useAuth()

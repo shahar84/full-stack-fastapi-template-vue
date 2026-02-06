@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { useForm } from "vee-validate"
 import { toTypedSchema } from "@vee-validate/zod"
+import { useForm } from "vee-validate"
 import { z } from "zod"
 import type { Body_login_login_access_token as AccessToken } from "@/client"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 import useAuth from "@/composables/useAuth"
 
 const { loginMutation } = useAuth()

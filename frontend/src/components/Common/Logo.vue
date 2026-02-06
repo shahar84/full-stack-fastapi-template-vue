@@ -1,23 +1,30 @@
 <script setup lang="ts">
-import { useTheme } from "@/composables/useTheme"
 import { computed } from "vue"
+import { useTheme } from "@/composables/useTheme"
 
-withDefaults(defineProps<{
-  variant?: "full" | "icon" | "responsive"
-  link?: boolean
-}>(), {
-  variant: "responsive",
-  link: true,
-})
+withDefaults(
+  defineProps<{
+    variant?: "full" | "icon" | "responsive"
+    link?: boolean
+  }>(),
+  {
+    variant: "responsive",
+    link: true,
+  },
+)
 
 const { resolvedTheme } = useTheme()
 
 const logoSrc = computed(() =>
-  resolvedTheme.value === "dark" ? "/assets/images/fastapi-logo-light.svg" : "/assets/images/fastapi-logo.svg",
+  resolvedTheme.value === "dark"
+    ? "/assets/images/fastapi-logo-light.svg"
+    : "/assets/images/fastapi-logo.svg",
 )
 
 const iconSrc = computed(() =>
-  resolvedTheme.value === "dark" ? "/assets/images/fastapi-icon-light.svg" : "/assets/images/fastapi-icon.svg",
+  resolvedTheme.value === "dark"
+    ? "/assets/images/fastapi-icon-light.svg"
+    : "/assets/images/fastapi-icon.svg",
 )
 </script>
 
