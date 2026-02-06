@@ -10,7 +10,7 @@ const tabsConfig = [
   { value: "danger-zone", title: "Danger zone" },
 ]
 
-const finalTabs = computed(() =>
+const _finalTabs = computed(() =>
   currentUser.value?.is_superuser ? tabsConfig.slice(0, 3) : tabsConfig,
 )
 </script>

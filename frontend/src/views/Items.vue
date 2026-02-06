@@ -2,14 +2,13 @@
 import { useQuery } from "@tanstack/vue-query"
 import { computed } from "vue"
 import { ItemsService } from "@/client"
-import { columns } from "@/components/Items/columns"
 
 const { data: items, isLoading } = useQuery({
   queryKey: ["items"],
   queryFn: () => ItemsService.readItems({ skip: 0, limit: 100 }),
 })
 
-const itemsData = computed(() => items.value?.data ?? [])
+const _itemsData = computed(() => items.value?.data ?? [])
 </script>
 
 <template>

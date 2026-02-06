@@ -29,8 +29,8 @@ const { handleSubmit, defineField, errors } = useForm({
   initialValues: { new_password: "", confirm_password: "" },
 })
 
-const [newPassword, newPasswordAttrs] = defineField("new_password")
-const [confirmPassword, confirmPasswordAttrs] =
+const [_newPassword, _newPasswordAttrs] = defineField("new_password")
+const [_confirmPassword, _confirmPasswordAttrs] =
   defineField("confirm_password")
 
 const mutation = useMutation({
@@ -48,7 +48,7 @@ const mutation = useMutation({
   onError: handleError.bind({ showErrorToast }),
 })
 
-const onSubmit = handleSubmit((values) => {
+const _onSubmit = handleSubmit((values) => {
   mutation.mutate({ new_password: values.new_password })
 })
 </script>

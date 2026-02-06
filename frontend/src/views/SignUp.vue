@@ -30,13 +30,13 @@ const { handleSubmit, defineField, errors } = useForm({
   },
 })
 
-const [email, emailAttrs] = defineField("email")
-const [fullName, fullNameAttrs] = defineField("full_name")
-const [password, passwordAttrs] = defineField("password")
-const [confirmPassword, confirmPasswordAttrs] =
+const [_email, _emailAttrs] = defineField("email")
+const [_fullName, _fullNameAttrs] = defineField("full_name")
+const [_password, _passwordAttrs] = defineField("password")
+const [_confirmPassword, _confirmPasswordAttrs] =
   defineField("confirm_password")
 
-const onSubmit = handleSubmit((values) => {
+const _onSubmit = handleSubmit((values) => {
   if (signUpMutation.isPending.value) return
   signUpMutation.mutate({
     email: values.email,

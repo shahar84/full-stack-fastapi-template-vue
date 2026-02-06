@@ -29,8 +29,8 @@ const { handleSubmit, defineField, errors, resetForm } = useForm({
   },
 })
 
-const [fullName, fullNameAttrs] = defineField("full_name")
-const [email, emailAttrs] = defineField("email")
+const [_fullName, _fullNameAttrs] = defineField("full_name")
+const [_email, _emailAttrs] = defineField("email")
 
 const mutation = useMutation({
   mutationFn: (data: { full_name?: string; email?: string }) =>
@@ -45,11 +45,11 @@ const mutation = useMutation({
   },
 })
 
-const onSubmit = handleSubmit((values) => {
+const _onSubmit = handleSubmit((values) => {
   mutation.mutate(values)
 })
 
-const cancel = () => {
+const _cancel = () => {
   resetForm({
     values: {
       full_name: user.value?.full_name ?? "",

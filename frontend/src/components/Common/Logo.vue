@@ -15,13 +15,13 @@ withDefaults(
 
 const { resolvedTheme } = useTheme()
 
-const logoSrc = computed(() =>
+const _logoSrc = computed(() =>
   resolvedTheme.value === "dark"
     ? "/assets/images/fastapi-logo-light.svg"
     : "/assets/images/fastapi-logo.svg",
 )
 
-const iconSrc = computed(() =>
+const _iconSrc = computed(() =>
   resolvedTheme.value === "dark"
     ? "/assets/images/fastapi-icon-light.svg"
     : "/assets/images/fastapi-icon.svg",

@@ -10,13 +10,13 @@ export interface NavItem {
 
 defineProps<{ items: NavItem[] }>()
 
-const route = useRoute()
+const _route = useRoute()
 const sidebar = inject<{
   isMobile: Ref<boolean>
   setOpenMobile: (value: boolean) => void
 }>("sidebar")
 
-const handleClick = () => {
+const _handleClick = () => {
   if (sidebar?.isMobile.value) {
     sidebar.setOpenMobile(false)
   }

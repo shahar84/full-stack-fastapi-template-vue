@@ -10,7 +10,7 @@ const isOpen = ref(false)
 const { logout } = useAuth()
 const { showSuccessToast, showErrorToast } = useCustomToast()
 
-const mutation = useMutation({
+const _mutation = useMutation({
   mutationFn: () => UsersService.deleteUserMe(),
   onSuccess: () => {
     showSuccessToast("Account deleted successfully")

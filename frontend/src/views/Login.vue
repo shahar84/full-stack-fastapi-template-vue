@@ -25,10 +25,10 @@ const { handleSubmit, defineField, errors } = useForm({
   },
 })
 
-const [username, usernameAttrs] = defineField("username")
-const [password, passwordAttrs] = defineField("password")
+const [_username, _usernameAttrs] = defineField("username")
+const [_password, _passwordAttrs] = defineField("password")
 
-const onSubmit = handleSubmit((values) => {
+const _onSubmit = handleSubmit((values) => {
   if (loginMutation.isPending.value) return
   loginMutation.mutate(values as AccessToken)
 })

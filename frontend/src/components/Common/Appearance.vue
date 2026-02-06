@@ -4,7 +4,7 @@ import { type Theme, useTheme } from "@/composables/useTheme"
 
 const { setTheme } = useTheme()
 
-const themes: { value: Theme; label: string; icon: typeof Sun }[] = [
+const _themes: { value: Theme; label: string; icon: typeof Sun }[] = [
   { value: "light", label: "Light", icon: Sun },
   { value: "dark", label: "Dark", icon: Moon },
   { value: "system", label: "System", icon: Monitor },

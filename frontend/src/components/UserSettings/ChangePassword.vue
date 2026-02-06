@@ -33,10 +33,10 @@ const { handleSubmit, defineField, errors, resetForm } = useForm({
   },
 })
 
-const [currentPassword, currentPasswordAttrs] =
+const [_currentPassword, _currentPasswordAttrs] =
   defineField("current_password")
-const [newPassword, newPasswordAttrs] = defineField("new_password")
-const [confirmPassword, confirmPasswordAttrs] =
+const [_newPassword, _newPasswordAttrs] = defineField("new_password")
+const [_confirmPassword, _confirmPasswordAttrs] =
   defineField("confirm_password")
 
 const mutation = useMutation({
@@ -49,7 +49,7 @@ const mutation = useMutation({
   onError: handleError.bind({ showErrorToast }),
 })
 
-const onSubmit = handleSubmit((values) => {
+const _onSubmit = handleSubmit((values) => {
   mutation.mutate({
     current_password: values.current_password,
     new_password: values.new_password,

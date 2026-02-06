@@ -20,7 +20,7 @@ const { handleSubmit, defineField, errors } = useForm({
   initialValues: { email: "" },
 })
 
-const [email, emailAttrs] = defineField("email")
+const [_email, _emailAttrs] = defineField("email")
 
 const mutation = useMutation({
   mutationFn: (data: { email: string }) =>
@@ -31,7 +31,7 @@ const mutation = useMutation({
   onError: handleError.bind({ showErrorToast }),
 })
 
-const onSubmit = handleSubmit((values) => {
+const _onSubmit = handleSubmit((values) => {
   mutation.mutate(values)
 })
 </script>

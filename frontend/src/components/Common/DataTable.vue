@@ -23,8 +23,8 @@ const table = useVueTable({
   getPaginationRowModel: getPaginationRowModel(),
 })
 
-const pageIndex = computed(() => table.getState().pagination.pageIndex)
-const pageSize = computed(() => table.getState().pagination.pageSize)
+const _pageIndex = computed(() => table.getState().pagination.pageIndex)
+const _pageSize = computed(() => table.getState().pagination.pageSize)
 </script>
 
 <template>
