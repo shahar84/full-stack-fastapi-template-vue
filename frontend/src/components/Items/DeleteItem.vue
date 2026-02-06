@@ -11,7 +11,7 @@ const isOpen = ref(false)
 const queryClient = useQueryClient()
 const { showSuccessToast, showErrorToast } = useCustomToast()
 
-const _mutation = useMutation({
+const mutation = useMutation({
   mutationFn: () => ItemsService.deleteItem({ id: props.item.id }),
   onSuccess: () => {
     showSuccessToast("Item deleted successfully")

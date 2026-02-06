@@ -30,8 +30,8 @@ const { handleSubmit, defineField, errors } = useForm({
   },
 })
 
-const [_title, _titleAttrs] = defineField("title")
-const [_description, _descriptionAttrs] = defineField("description")
+const [title, titleAttrs] = defineField("title")
+const [description, descriptionAttrs] = defineField("description")
 
 const mutation = useMutation({
   mutationFn: (data: { title: string; description?: string }) =>
@@ -47,7 +47,7 @@ const mutation = useMutation({
   },
 })
 
-const _onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit((values) => {
   mutation.mutate(values)
 })
 

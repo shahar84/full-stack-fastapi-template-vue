@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/vue-query"
 import { computed } from "vue"
 import { type UserPublic, UsersService } from "@/client"
-import type { UserTableData } from "@/components/Admin/columns"
+import { columns, type UserTableData } from "@/components/Admin/columns"
 import useAuth from "@/composables/useAuth"
 
 const { user: currentUser } = useAuth()
@@ -12,7 +12,7 @@ const { data: users, isLoading } = useQuery({
   queryFn: () => UsersService.readUsers({ skip: 0, limit: 100 }),
 })
 
-const _tableData = computed<UserTableData[]>(() =>
+const tableData = computed<UserTableData[]>(() =>
   (users.value?.data ?? []).map((user: UserPublic) => ({
     ...user,
     isCurrentUser: currentUser.value?.id === user.id,

@@ -29,9 +29,8 @@ const { handleSubmit, defineField, errors } = useForm({
   initialValues: { new_password: "", confirm_password: "" },
 })
 
-const [_newPassword, _newPasswordAttrs] = defineField("new_password")
-const [_confirmPassword, _confirmPasswordAttrs] =
-  defineField("confirm_password")
+const [newPassword, newPasswordAttrs] = defineField("new_password")
+const [confirmPassword, confirmPasswordAttrs] = defineField("confirm_password")
 
 const mutation = useMutation({
   mutationFn: (data: { new_password: string }) =>
@@ -48,7 +47,7 @@ const mutation = useMutation({
   onError: handleError.bind({ showErrorToast }),
 })
 
-const _onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit((values) => {
   mutation.mutate({ new_password: values.new_password })
 })
 </script>
@@ -65,13 +64,13 @@ const _onSubmit = handleSubmit((values) => {
     <div class="grid gap-4">
       <div class="space-y-2">
         <label class="text-sm font-medium" for="new_password">New Password</label>
-        <Input id="new_password" v-model="newPassword" v-bind="newPasswordAttrs" placeholder="New Password" type="password" />
+        <Input id="new_password" v-model="newPassword" v-bind="newPasswordAttrs" data-testid="new-password-input" placeholder="New Password" type="password" />
         <p v-if="errors.new_password" class="text-xs font-medium text-destructive">{{ errors.new_password }}</p>
       </div>
 
       <div class="space-y-2">
         <label class="text-sm font-medium" for="confirm_password">Confirm Password</label>
-        <Input id="confirm_password" v-model="confirmPassword" v-bind="confirmPasswordAttrs" placeholder="Confirm Password" type="password" />
+        <Input id="confirm_password" v-model="confirmPassword" v-bind="confirmPasswordAttrs" data-testid="confirm-password-input" placeholder="Confirm Password" type="password" />
         <p v-if="errors.confirm_password" class="text-xs font-medium text-destructive">{{ errors.confirm_password }}</p>
       </div>
 

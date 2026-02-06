@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { inject, type Ref } from "vue"
 import useAuth from "@/composables/useAuth"
+import { getInitials } from "@/lib/utils"
 
 defineProps<{ user: any }>()
 
@@ -10,7 +11,7 @@ const sidebar = inject<{
   setOpenMobile: (value: boolean) => void
 }>("sidebar")
 
-const _handleMenuClick = () => {
+const handleMenuClick = () => {
   if (sidebar?.isMobile.value) {
     sidebar.setOpenMobile(false)
   }

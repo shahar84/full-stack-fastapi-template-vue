@@ -4,7 +4,7 @@ import { type Theme, useTheme } from "@/composables/useTheme"
 
 const { setTheme } = useTheme()
 
-const _themes: { value: Theme; label: string; icon: typeof Sun }[] = [
+const themes: { value: Theme; label: string; icon: typeof Sun }[] = [
   { value: "light", label: "Light", icon: Sun },
   { value: "dark", label: "Dark", icon: Moon },
   { value: "system", label: "System", icon: Monitor },
@@ -21,7 +21,7 @@ const _themes: { value: Theme; label: string; icon: typeof Sun }[] = [
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">
-      <DropdownMenuItem v-for="t in themes" :key="t.value" @click="setTheme(t.value)">
+      <DropdownMenuItem v-for="t in themes" :key="t.value" @click="setTheme(t.value)" :data-testid="`${t.value}-mode`">
         <component :is="t.icon" class="mr-2 h-4 w-4" />
         {{ t.label }}
       </DropdownMenuItem>

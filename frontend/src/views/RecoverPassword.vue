@@ -20,7 +20,7 @@ const { handleSubmit, defineField, errors } = useForm({
   initialValues: { email: "" },
 })
 
-const [_email, _emailAttrs] = defineField("email")
+const [email, emailAttrs] = defineField("email")
 
 const mutation = useMutation({
   mutationFn: (data: { email: string }) =>
@@ -31,7 +31,7 @@ const mutation = useMutation({
   onError: handleError.bind({ showErrorToast }),
 })
 
-const _onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit((values) => {
   mutation.mutate(values)
 })
 </script>
@@ -48,7 +48,7 @@ const _onSubmit = handleSubmit((values) => {
     <div class="grid gap-4">
       <div class="space-y-2">
         <label class="text-sm font-medium" for="email">Email</label>
-        <Input id="email" v-model="email" v-bind="emailAttrs" placeholder="user@example.com" type="email" />
+        <Input id="email" v-model="email" v-bind="emailAttrs" data-testid="email-input" placeholder="user@example.com" type="email" />
         <p v-if="errors.email" class="text-xs font-medium text-destructive">{{ errors.email }}</p>
       </div>
 

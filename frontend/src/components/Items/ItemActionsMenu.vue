@@ -6,8 +6,8 @@ import type EditItem from "./EditItem.vue"
 
 defineProps<{ item: ItemPublic }>()
 
-const _editRef = ref<InstanceType<typeof EditItem>>()
-const _deleteRef = ref<InstanceType<typeof DeleteItem>>()
+const editRef = ref<InstanceType<typeof EditItem>>()
+const deleteRef = ref<InstanceType<typeof DeleteItem>>()
 </script>
 
 <template>

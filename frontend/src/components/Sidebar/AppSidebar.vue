@@ -10,7 +10,7 @@ const baseItems = [
   { icon: Briefcase, title: "Items", path: "/items" },
 ]
 
-const _items = computed(() =>
+const items = computed(() =>
   currentUser.value?.is_superuser
     ? [...baseItems, { icon: Users, title: "Admin", path: "/admin" }]
     : baseItems,

@@ -40,13 +40,12 @@ const { handleSubmit, defineField, errors, resetForm } = useForm({
   },
 })
 
-const [_email, _emailAttrs] = defineField("email")
-const [_fullName, _fullNameAttrs] = defineField("full_name")
-const [_password, _passwordAttrs] = defineField("password")
-const [_confirmPassword, _confirmPasswordAttrs] =
-  defineField("confirm_password")
-const [_isSuperuser] = defineField("is_superuser")
-const [_isActive] = defineField("is_active")
+const [email, emailAttrs] = defineField("email")
+const [fullName, fullNameAttrs] = defineField("full_name")
+const [password, passwordAttrs] = defineField("password")
+const [confirmPassword, confirmPasswordAttrs] = defineField("confirm_password")
+const [isSuperuser] = defineField("is_superuser")
+const [isActive] = defineField("is_active")
 
 const mutation = useMutation({
   mutationFn: (data: UserCreate) =>
@@ -62,7 +61,7 @@ const mutation = useMutation({
   },
 })
 
-const _onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit((values) => {
   mutation.mutate({
     email: values.email,
     full_name: values.full_name,

@@ -30,13 +30,12 @@ const { handleSubmit, defineField, errors } = useForm({
   },
 })
 
-const [_email, _emailAttrs] = defineField("email")
-const [_fullName, _fullNameAttrs] = defineField("full_name")
-const [_password, _passwordAttrs] = defineField("password")
-const [_confirmPassword, _confirmPasswordAttrs] =
-  defineField("confirm_password")
+const [email, emailAttrs] = defineField("email")
+const [fullName, fullNameAttrs] = defineField("full_name")
+const [password, passwordAttrs] = defineField("password")
+const [confirmPassword, confirmPasswordAttrs] = defineField("confirm_password")
 
-const _onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit((values) => {
   if (signUpMutation.isPending.value) return
   signUpMutation.mutate({
     email: values.email,
@@ -55,25 +54,25 @@ const _onSubmit = handleSubmit((values) => {
     <div class="grid gap-4">
       <div class="space-y-2">
         <label class="text-sm font-medium" for="full_name">Full Name</label>
-        <Input id="full_name" v-model="fullName" v-bind="fullNameAttrs" placeholder="Full Name" type="text" />
+        <Input id="full_name" v-model="fullName" v-bind="fullNameAttrs" data-testid="full-name-input" placeholder="Full Name" type="text" />
         <p v-if="errors.full_name" class="text-xs font-medium text-destructive">{{ errors.full_name }}</p>
       </div>
 
       <div class="space-y-2">
         <label class="text-sm font-medium" for="email">Email</label>
-        <Input id="email" v-model="email" v-bind="emailAttrs" placeholder="user@example.com" type="email" />
+        <Input id="email" v-model="email" v-bind="emailAttrs" data-testid="email-input" placeholder="user@example.com" type="email" />
         <p v-if="errors.email" class="text-xs font-medium text-destructive">{{ errors.email }}</p>
       </div>
 
       <div class="space-y-2">
         <label class="text-sm font-medium" for="password">Password</label>
-        <Input id="password" v-model="password" v-bind="passwordAttrs" placeholder="Password" type="password" />
+        <Input id="password" v-model="password" v-bind="passwordAttrs" data-testid="password-input" placeholder="Password" type="password" />
         <p v-if="errors.password" class="text-xs font-medium text-destructive">{{ errors.password }}</p>
       </div>
 
       <div class="space-y-2">
         <label class="text-sm font-medium" for="confirm_password">Confirm Password</label>
-        <Input id="confirm_password" v-model="confirmPassword" v-bind="confirmPasswordAttrs" placeholder="Confirm Password" type="password" />
+        <Input id="confirm_password" v-model="confirmPassword" v-bind="confirmPasswordAttrs" data-testid="confirm-password-input" placeholder="Confirm Password" type="password" />
         <p v-if="errors.confirm_password" class="text-xs font-medium text-destructive">{{ errors.confirm_password }}</p>
       </div>
 

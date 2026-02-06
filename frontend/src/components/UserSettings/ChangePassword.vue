@@ -33,11 +33,9 @@ const { handleSubmit, defineField, errors, resetForm } = useForm({
   },
 })
 
-const [_currentPassword, _currentPasswordAttrs] =
-  defineField("current_password")
-const [_newPassword, _newPasswordAttrs] = defineField("new_password")
-const [_confirmPassword, _confirmPasswordAttrs] =
-  defineField("confirm_password")
+const [currentPassword, currentPasswordAttrs] = defineField("current_password")
+const [newPassword, newPasswordAttrs] = defineField("new_password")
+const [confirmPassword, confirmPasswordAttrs] = defineField("confirm_password")
 
 const mutation = useMutation({
   mutationFn: (data: { current_password: string; new_password: string }) =>
@@ -49,7 +47,7 @@ const mutation = useMutation({
   onError: handleError.bind({ showErrorToast }),
 })
 
-const _onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit((values) => {
   mutation.mutate({
     current_password: values.current_password,
     new_password: values.new_password,
@@ -66,17 +64,17 @@ const _onSubmit = handleSubmit((values) => {
       <form @submit="onSubmit" class="space-y-4 max-w-md">
         <div class="space-y-2">
           <label class="text-sm font-medium">Current Password</label>
-          <Input v-model="currentPassword" v-bind="currentPasswordAttrs" type="password" placeholder="Current password" />
+          <Input v-model="currentPassword" v-bind="currentPasswordAttrs" data-testid="current-password-input" type="password" placeholder="Current password" />
           <p v-if="errors.current_password" class="text-xs text-destructive">{{ errors.current_password }}</p>
         </div>
         <div class="space-y-2">
           <label class="text-sm font-medium">New Password</label>
-          <Input v-model="newPassword" v-bind="newPasswordAttrs" type="password" placeholder="New password" />
+          <Input v-model="newPassword" v-bind="newPasswordAttrs" data-testid="new-password-input" type="password" placeholder="New password" />
           <p v-if="errors.new_password" class="text-xs text-destructive">{{ errors.new_password }}</p>
         </div>
         <div class="space-y-2">
           <label class="text-sm font-medium">Confirm New Password</label>
-          <Input v-model="confirmPassword" v-bind="confirmPasswordAttrs" type="password" placeholder="Confirm password" />
+          <Input v-model="confirmPassword" v-bind="confirmPasswordAttrs" data-testid="confirm-password-input" type="password" placeholder="Confirm password" />
           <p v-if="errors.confirm_password" class="text-xs text-destructive">{{ errors.confirm_password }}</p>
         </div>
         <Button type="submit" :disabled="mutation.isPending.value">

@@ -6,8 +6,8 @@ import type EditUser from "./EditUser.vue"
 
 defineProps<{ user: UserPublic; isCurrentUser: boolean }>()
 
-const _editRef = ref<InstanceType<typeof EditUser>>()
-const _deleteRef = ref<InstanceType<typeof DeleteUser>>()
+const editRef = ref<InstanceType<typeof EditUser>>()
+const deleteRef = ref<InstanceType<typeof DeleteUser>>()
 </script>
 
 <template>
