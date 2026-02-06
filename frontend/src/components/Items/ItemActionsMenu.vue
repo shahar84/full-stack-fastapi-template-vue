@@ -1,0 +1,43 @@
+<script setup lang="ts">
+import { ref } from "vue"
+import { MoreHorizontal, Pencil, Trash } from "lucide-vue-next"
+import type { ItemPublic } from "@/client"
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import EditItem from "./EditItem.vue"
+import DeleteItem from "./DeleteItem.vue"
+
+defineProps<{ item: ItemPublic }>()
+
+const editRef = ref<InstanceType<typeof EditItem>>()
+const deleteRef = ref<InstanceType<typeof DeleteItem>>()
+</script>
+
+<template>
+  <DropdownMenu>
+    <DropdownMenuTrigger as-child>
+      <Button variant="ghost" size="icon" class="h-8 w-8">
+        <MoreHorizontal class="h-4 w-4" />
+        <span class="sr-only">Open menu</span>
+      </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="end">
+      <DropdownMenuItem @click="editRef?.open()">
+        <Pencil class="mr-2 h-4 w-4" />
+        Edit Item
+      </DropdownMenuItem>
+      <DropdownMenuItem @click="deleteRef?.open()" class="text-destructive">
+        <Trash class="mr-2 h-4 w-4" />
+        Delete Item
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+
+  <EditItem ref="editRef" :item="item" />
+  <DeleteItem ref="deleteRef" :item="item" />
+</template>
