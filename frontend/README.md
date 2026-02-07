@@ -1,6 +1,6 @@
 # FastAPI Project - Frontend
 
-The frontend is built with [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [TanStack Query](https://tanstack.com/query), [TanStack Router](https://tanstack.com/router) and [Tailwind CSS](https://tailwindcss.com/).
+The frontend is built with [Vue 3](https://vuejs.org/) (Composition API), [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/), [TanStack Query](https://tanstack.com/query), [Vue Router](https://router.vuejs.org/), [shadcn-vue](https://www.shadcn-vue.com/) and [Tailwind CSS](https://tailwindcss.com/).
 
 ## Requirements
 
@@ -87,8 +87,10 @@ The frontend code is structured as follows:
 * `frontend/src/assets` - Static assets.
 * `frontend/src/client` - The generated OpenAPI client.
 * `frontend/src/components` -  The different components of the frontend.
-* `frontend/src/hooks` - Custom hooks.
-* `frontend/src/routes` - The different routes of the frontend which include the pages.
+* `frontend/src/composables` - Vue composables (useAuth, useTheme, etc.).
+* `frontend/src/router` - Vue Router configuration and navigation guards.
+* `frontend/src/views` - Page-level view components.
+* `frontend/src/layouts` - Layout components (DefaultLayout, GuestLayout).
 
 ## End-to-End Testing with Playwright
 

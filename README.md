@@ -1,4 +1,6 @@
-# Full Stack FastAPI Template
+# Full Stack FastAPI Template (Vue Edition)
+
+> This project is a Vue 3 fork of the original [Full Stack FastAPI Template](https://github.com/fastapi/full-stack-fastapi-template) by the FastAPI team, which uses React. The frontend has been fully rewritten in Vue 3 while keeping the same backend, API client, and overall architecture.
 
 <a href="https://github.com/fastapi/full-stack-fastapi-template/actions?query=workflow%3A%22Test+Docker+Compose%22" target="_blank"><img src="https://github.com/fastapi/full-stack-fastapi-template/workflows/Test%20Docker%20Compose/badge.svg" alt="Test Docker Compose"></a>
 <a href="https://github.com/fastapi/full-stack-fastapi-template/actions?query=workflow%3A%22Test+Backend%22" target="_blank"><img src="https://github.com/fastapi/full-stack-fastapi-template/workflows/Test%20Backend/badge.svg" alt="Test Backend"></a>
@@ -10,9 +12,11 @@
   - 🧰 [SQLModel](https://sqlmodel.tiangolo.com) for the Python SQL database interactions (ORM).
   - 🔍 [Pydantic](https://docs.pydantic.dev), used by FastAPI, for the data validation and settings management.
   - 💾 [PostgreSQL](https://www.postgresql.org) as the SQL database.
-- 🚀 [React](https://react.dev) for the frontend.
-  - 💃 Using TypeScript, hooks, [Vite](https://vitejs.dev), and other parts of a modern frontend stack.
-  - 🎨 [Tailwind CSS](https://tailwindcss.com) and [shadcn/ui](https://ui.shadcn.com) for the frontend components.
+- 🚀 [Vue 3](https://vuejs.org) for the frontend.
+  - 💃 Using TypeScript, Composition API, [Vite](https://vitejs.dev), and other parts of a modern frontend stack.
+  - 🎨 [Tailwind CSS](https://tailwindcss.com) and [shadcn-vue](https://www.shadcn-vue.com) for the frontend components.
+  - 🔄 [TanStack Query](https://tanstack.com/query) for server state management.
+  - 🛣️ [Vue Router](https://router.vuejs.org) for routing with navigation guards.
   - 🤖 An automatically generated frontend client.
   - 🧪 [Playwright](https://playwright.dev) for End-to-End testing.
   - 🦇 Dark mode support.
