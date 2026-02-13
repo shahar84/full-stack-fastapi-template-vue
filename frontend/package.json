@@ -35,7 +35,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.0.0",
     "@hey-api/openapi-ts": "0.73.0",
-    "@playwright/test": "1.58.0",
+    "@playwright/test": "1.58.2",
     "@types/node": "^22.10.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "dotenv": "^16.4.7",
